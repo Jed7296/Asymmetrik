@@ -11,15 +11,22 @@ public class ContactInfo {
 	//A list of common job words found in job titles and company names
 	private String[] taboo = {"therapist", "asisstant", "administrative", "manager", "regional", "project", "representative", "sales", "account", 
 							  "developer", "senior", "junior", "analyst", "customer", "software", "engineer", "analytic", "co.", "ltd", "inc.",
-							  "technologies", "corporation", "group", "company", "corp", "partners"};
-	
-	public ContactInfo() {
-		
+							  "technologies", "corporation", "group", "company", "corp", "partners"};	
+	//Functions
+	//Basic Constructor
+	public ContactInfo() {		
 	}
-
+	
+	/*
+	 * ContactInfo
+	 * Constructs the ContactInfo class 
+	 * parser through input file and calls setters for the class.
+	 * input: String that contains the file name or file path
+	 * Output: None
+	 * 
+	 */
 	public ContactInfo(String Document) throws FileNotFoundException {
 		Doc = "";
-		
 		//Opens the text document and parses through, adding each line to the Doc variable.
 		Scanner inFile = new Scanner(new FileReader(Document));
 		while(inFile.hasNextLine()) {
@@ -31,7 +38,7 @@ public class ContactInfo {
 		email = getEmailAddress();
 	}
 	
-	
+	//Setters
 	
 	/*
 	 * getName
@@ -41,7 +48,7 @@ public class ContactInfo {
 	 * input: None
 	 * Output: Phone Number
 	 * 
-	*/
+	 */
 	public String getName() {
 		String Name = "Failed";
 		String[] lines = Doc.split("\n");						//Splits at every new line
@@ -54,10 +61,7 @@ public class ContactInfo {
 					break;
 				}
 			}
-		}
-		
-		
-		
+		}	
 		return Name;
 	}
 	
@@ -108,6 +112,8 @@ public class ContactInfo {
 		}
 		return Email;
 	}
+	
+	//Print
 	
 	/*
 	 * showContactInfo

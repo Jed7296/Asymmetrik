@@ -12,9 +12,5 @@ public class BusinessCardParser{
 		getContactInfo.showContactInfo();							//Output information
 	
 	}
-
 	
-	
-
-
 }
